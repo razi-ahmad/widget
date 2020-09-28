@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "demo.throttling.timeWindow",
+      "type": "java.lang.String",
+      "description": "time window expressed in minute."
+    }
+  ]
+}

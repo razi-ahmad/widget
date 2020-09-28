@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: @spring.profiles.active@
+  redis:
+    host: localhost
+    port: 6379
+demo:
+  throttling:
+    timeWindow: 1
+---
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  data:
+    jpa:
+      repositories:
+        enabled: false
+  profiles: memory
+
+---
+spring:
+  profiles: db
+  datasource:
+    url: jdbc:h2:file:~/test
+  h2:
+    console:
+      enabled: true
